@@ -1,1 +1,1 @@
-# ws-react-hocks
+# ws-react-hooks
