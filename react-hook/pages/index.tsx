@@ -3,7 +3,7 @@ import {ExampleState} from "../basicHooks/exampleState";
 import {MultipleStateVariables} from "../basicHooks/multipleStateVariables";
 import {ExampleEffect} from "../basicHooks/exampleEffect";
 import {ExampleRef} from "../additionalHooks/exampleRef";
-import {ExampleContext} from "../basicHooks/exampleContext";
+import {ExampleContextWithUpdate} from "../basicHooks/exampleContextWithUpdate";
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
         {selection === '1' && <ExampleState/>}
         {selection === '2' && <MultipleStateVariables/>}
         {selection === '3' && <ExampleEffect/>}
-        {selection === '4' && <ExampleContext/>}
+        {selection === '4' && <ExampleContextWithUpdate/>}
         {selection === '10' && <ExampleRef/>}
         </div>
     </>;

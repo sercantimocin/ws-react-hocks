@@ -11,31 +11,29 @@ const themes = {
     }
 };
 
-const ThemeContext = createContext({
+const defaultSettings = {
     theme: themes.dark,
-    toggleTheme: (settings) => ({
-        theme: settings.theme === themes.dark
-            ? themes.light
-            : themes.dark,
-    })
-});
+    toggleTheme: () => {}
+};
 
-export function ExampleContext(): ReactElement {
+function changeTheme(s: { toggleTheme: () => void; theme: { background: string; foreground: string } }) {
+    if (s.theme === themes.dark) {
+        s.theme = themes.light;
+    } else {
+        s.theme = themes.dark;
+    }
 
+    return {theme: s.theme, toggleTheme: this};
+}
 
-    let defaultSettings = {
-        theme: themes.dark,
-        toggleTheme: (settings) => ({
-            theme: settings.theme === themes.dark
-                ? themes.light
-                : themes.dark,
-        }),
-    };
+const ThemeContext = createContext(defaultSettings);
 
+export function ExampleContextWithUpdate(): ReactElement {
     const [settings, setSettings] = useState(defaultSettings);
+    const updateTheme = () => setSettings(s=>changeTheme(s))
 
     return (
-        <ThemeContext.Provider value={settings}>
+        <ThemeContext.Provider value={{theme:settings.theme, toggleTheme:updateTheme}}>
             <Content/>
         </ThemeContext.Provider>
     );
