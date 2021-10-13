@@ -6,6 +6,7 @@ import {ExampleRef} from '../additionalHooks/exampleRef';
 import {ExampleContextWithUpdate} from '../basicHooks/exampleContextWithUpdate';
 import {OnlyCallHooksAtTheTop} from "../rulesOfHooks/onlyCallHooksAtTheTop";
 import {OnlineStatus} from "../customHooks/onlineStatus";
+import {ExampleReducer} from "../additionalHooks/exampleReducer";
 
 function App() {
     const [selection, setSelection] = useState('1');
@@ -24,9 +25,15 @@ function App() {
             <p>
                 5-) Only call hooks at the top level *<br/>
             </p>
+            <br/>
             <b><h3>Custom hooks</h3></b>
             <p>
                 6-) useOnline <br/>
+            </p>
+            <br/>
+            <b><h3>Additional hooks</h3></b>
+            <p>
+                7-) useReducer <br/>
             </p>
             <br/>
             <br/>
@@ -41,6 +48,7 @@ function App() {
             {selection === '4' && <ExampleContextWithUpdate/>}
             {selection === '5' && <OnlyCallHooksAtTheTop/>}
             {selection === '6' && <OnlineStatus/>}
+            {selection === '7' && <ExampleReducer/>}
             {selection === '10' && <ExampleRef/>}
         </div>
     </>;
