@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --fix --ext .js,.jsx,.tsx,.ts ."
   },
   "dependencies": {
     "next": "^11.0.0",
@@ -14,6 +15,12 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.27",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "typescript": "^4.4.3"
   }
 }
