@@ -34,6 +34,7 @@ function App() {
             <b><h3>Additional hooks</h3></b>
             <p>
                 7-) useReducer <br/>
+                8-) useRef <br/>
             </p>
             <br/>
             <br/>
@@ -49,7 +50,7 @@ function App() {
             {selection === '5' && <OnlyCallHooksAtTheTop/>}
             {selection === '6' && <OnlineStatus/>}
             {selection === '7' && <ExampleReducer/>}
-            {selection === '10' && <ExampleRef/>}
+            {selection === '8' && <ExampleRef/>}
         </div>
     </>;
 }

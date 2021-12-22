@@ -7,10 +7,11 @@ export function ExampleEffect():ReactElement {
     setInterval(() => {
       setColor(randomColor);
     }, 3000);
+      subscribeData();
     return ()=> {
       // What should we do in here ?
     };
-  }, [color]);
+  }, []);
 
   return <>
     <p style={{backgroundColor: '#' + `${color}`}}>
@@ -28,4 +29,7 @@ function randomColor():string {
   return Math.floor(Math.random() * 16777215).toString(16);
 }
 
+function subscribeData(){
+    // Just suppose subcribing code here
+}
 

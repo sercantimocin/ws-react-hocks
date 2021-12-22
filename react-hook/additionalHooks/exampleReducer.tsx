@@ -18,7 +18,7 @@ function init(initialCount) {
 }
 
 export function ExampleReducer() {
-    const [state, dispatch] = useReducer(reducer, initialState, init); // init ??
+    const [state, dispatch] = useReducer(reducer, initialState); // init ??
     return (
         <>
             Count: {state.count}
